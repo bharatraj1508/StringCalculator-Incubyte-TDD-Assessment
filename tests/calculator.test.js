@@ -38,7 +38,33 @@ function tesetForMultipleNumbers() {
   );
 }
 
+// PART 3: FOR NEW LINES BETWEEN NUMBERS
+
+// Test Case 5: For new lines between numbers
+function testForNewLinesBetweenNumbers() {
+  const result = add("4,2,3\n5\n8,6");
+  console.assert(result === 28, `Expected result 28 but got ${result}`);
+  console.log(
+    result === 28
+      ? `Test case 5 passed with result ${result}`
+      : "Test case 5 failed"
+  );
+}
+
+// Test Case 6: For new lines between numbers
+function testForNewLinesBetweenNumbers2() {
+  const result = add("1\n2,3");
+  console.assert(result === 6, `Expected result 6 but got ${result}`);
+  console.log(
+    result === 6
+      ? `Test case 6 passed with result ${result}`
+      : "Test case 6 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
 tesetForMultipleNumbers();
+testForNewLinesBetweenNumbers();
+testForNewLinesBetweenNumbers2();
