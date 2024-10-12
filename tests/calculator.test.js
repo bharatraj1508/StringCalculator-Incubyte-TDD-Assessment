@@ -84,6 +84,19 @@ function testForDifferentDelimiters2() {
   );
 }
 
+// Test case 9: For single negative number
+function testForSingleNegativeNumber() {
+  try {
+    add("-2");
+  } catch (e) {
+    console.assert(
+      e.message === "negative numbers not allowed -2",
+      `Expected 'negative numbers not allowed -2', but got ${e.message}`
+    );
+    console.log(`Test case 9 passed: ${e.message}`);
+  }
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
@@ -92,3 +105,4 @@ testForNewLinesBetweenNumbers();
 testForNewLinesBetweenNumbers2();
 testForDifferentDelimiters();
 testForDifferentDelimiters2();
+testForSingleNegativeNumber();
