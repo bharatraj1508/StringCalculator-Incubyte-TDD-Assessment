@@ -8,6 +8,7 @@ function add(numbers) {
   }
 
   let numArray = numbers.split(delimeter);
+  numArray = numArray.filter((num) => num < 1000);
 
   let negativeArray = [];
 
