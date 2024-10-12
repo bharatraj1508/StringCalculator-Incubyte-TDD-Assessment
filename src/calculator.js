@@ -1,5 +1,7 @@
 function add(numbers) {
   if (numbers === "") return 0;
+  if (parseInt(numbers) < 0)
+    throw new Error(`negative numbers not allowed ${parseInt(numbers)}`);
 
   let delimeter = /[\n,]/;
 
