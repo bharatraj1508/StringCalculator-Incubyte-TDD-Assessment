@@ -1,0 +1,12 @@
+{
+  "name": "stringcalculator",
+  "version": "1.0.0",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "node tests/calculator.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
