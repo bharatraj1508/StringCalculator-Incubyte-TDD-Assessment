@@ -5,7 +5,7 @@ function testForEmptyString() {
   const result = add("");
   console.assert(result === 0, `Expected result 0 but got ${result}`);
   console.log(
-    result === 0 ? "Test case 2 passed for empty string" : "Test 1 failed"
+    result === 0 ? "Test case 1 passed for empty string" : "Test 1 failed"
   );
 }
 
