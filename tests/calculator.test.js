@@ -73,6 +73,17 @@ function testForDifferentDelimiters() {
   );
 }
 
+// Test case 8: Support differenct delimiters
+function testForDifferentDelimiters2() {
+  const result = add("//-\n3-4-5-6-3");
+  console.assert(result === 21, `Expected result 21 but got ${result}`);
+  console.log(
+    result === 21
+      ? `Test case 8 passed with result ${result}`
+      : "Test case 8 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
@@ -80,3 +91,4 @@ tesetForMultipleNumbers();
 testForNewLinesBetweenNumbers();
 testForNewLinesBetweenNumbers2();
 testForDifferentDelimiters();
+testForDifferentDelimiters2();
