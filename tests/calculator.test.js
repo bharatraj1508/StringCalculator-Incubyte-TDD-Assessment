@@ -62,9 +62,21 @@ function testForNewLinesBetweenNumbers2() {
   );
 }
 
+// Test case 7: Support differenct delimiters
+function testForDifferentDelimiters() {
+  const result = add("//;\n1;2");
+  console.assert(result === 3, `Expected result 3 but got ${result}`);
+  console.log(
+    result === 3
+      ? `Test case 7 passed with result ${result}`
+      : "Test case 7 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
 tesetForMultipleNumbers();
 testForNewLinesBetweenNumbers();
 testForNewLinesBetweenNumbers2();
+testForDifferentDelimiters();
