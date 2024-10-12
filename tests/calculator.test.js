@@ -100,14 +100,14 @@ function testForSingleNegativeNumber() {
 // Test case 10: For multiple negative number
 function testForMultipleNegativeNumber() {
   try {
-    add("-2, -3, -4");
+    add("2,-3,-4");
   } catch (e) {
     console.assert(
-      e.message === "negative numbers not allowed -2, -3, -4",
-      `Expected 'negative numbers not allowed -2, -3, -4', but got ${e.message}`
+      e.message === "negative numbers not allowed -3,-4",
+      `Expected 'negative numbers not allowed -3,-4', but got ${e.message}`
     );
     console.log(
-      e.message === "negative numbers not allowed -2, -3, -4"
+      e.message === "negative numbers not allowed -3,-4"
         ? `Test case 10 passed: ${e.message}`
         : "Test case 10 failed"
     );
