@@ -18,5 +18,15 @@ function testForOneNumber() {
   );
 }
 
+//Test Case 3: For two numbers string
+function testForTwoNumbers() {
+  const result = add("2,3");
+  console.assert(result === 5, `Expected result 5 but got ${result}`);
+  console.log(
+    result === 5 ? "Test case 3 passed for single number" : "Test 3 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
+testForTwoNumbers();
