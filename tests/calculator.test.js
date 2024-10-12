@@ -114,6 +114,19 @@ function testForMultipleNegativeNumber() {
   }
 }
 
+// Extra Point part
+
+// Test case 11: Ignoring number greater than 1000
+function testForBigNumber() {
+  const result = add("2,1002\n4,3");
+  console.assert(result === 9, `Expected result 9, but got ${result}`);
+  console.log(
+    result === 9
+      ? `Test case 11 passed with result ${result}`
+      : "Test case 11 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
@@ -124,3 +137,4 @@ testForDifferentDelimiters();
 testForDifferentDelimiters2();
 testForSingleNegativeNumber();
 testForMultipleNegativeNumber();
+testForBigNumber();
