@@ -138,6 +138,17 @@ function testForAnyLengthDelimiter() {
   );
 }
 
+// Test case 13: Multiple delimiter
+function testForMultipleDelimiter() {
+  const result = add("//[*][%]\n1*2%3");
+  console.assert(result === 6, `Expected result 6, but got ${result}`);
+  console.log(
+    result === 6
+      ? `Test case 13 passed with result ${result}`
+      : "Test case 13 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
@@ -150,3 +161,4 @@ testForSingleNegativeNumber();
 testForMultipleNegativeNumber();
 testForBigNumber();
 testForAnyLengthDelimiter();
+testForMultipleDelimiter();
