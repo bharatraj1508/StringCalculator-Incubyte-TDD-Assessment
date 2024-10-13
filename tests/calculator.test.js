@@ -149,6 +149,17 @@ function testForMultipleDelimiter() {
   );
 }
 
+// Test case 14: multiple character delimters
+function testForMultipleCharDelimeter() {
+  const result = add("//[***][%%][-]\n1***2-3%%7%%8-9");
+  console.assert(result === 30, `Expected result 30, but got ${result}`);
+  console.log(
+    result === 30
+      ? `Test case 14 passed with result ${result}`
+      : "Test case 14 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
@@ -162,3 +173,4 @@ testForMultipleNegativeNumber();
 testForBigNumber();
 testForAnyLengthDelimiter();
 testForMultipleDelimiter();
+testForMultipleCharDelimeter();
