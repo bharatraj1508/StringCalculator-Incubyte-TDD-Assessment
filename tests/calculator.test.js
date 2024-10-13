@@ -127,6 +127,17 @@ function testForBigNumber() {
   );
 }
 
+// Test case 12: Any length delimiter
+function testForAnyLengthDelimiter() {
+  const result = add("//[***]\n1***2***3");
+  console.assert(result === 6, `Expected result 6, but got ${result}`);
+  console.log(
+    result === 6
+      ? `Test case 12 passed with result ${result}`
+      : "Test case 12 failed"
+  );
+}
+
 testForEmptyString();
 testForOneNumber();
 testForTwoNumbers();
@@ -138,3 +149,4 @@ testForDifferentDelimiters2();
 testForSingleNegativeNumber();
 testForMultipleNegativeNumber();
 testForBigNumber();
+testForAnyLengthDelimiter();
