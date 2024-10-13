@@ -3,8 +3,20 @@ function add(numbers) {
   let delimeter = /[\n,]/;
 
   if (numbers.startsWith("//")) {
-    delimeter = new RegExp(numbers[2]);
-    numbers = numbers.slice(3);
+    // Get the matching expression within the square bracket
+    // /\[(.*)\]/ is the regular expression for matching the condition
+    // This means anything inside the square bracket that are grouped together, contains the delimeter.
+    // It will return an array.
+    const matchingExp = numbers.match(/\[(.*)\]/);
+
+    if (matchingExp) {
+      delimeter = matchingExp[1]; // this will return an array which contains the delimeter at its 2nd index
+      const tempNum = numbers.split("\n"); // split the string between new line
+      numbers = tempNum[1]; // 2nd index contains the actual number with delimiter
+    } else {
+      delimeter = new RegExp(numbers[2]);
+      numbers = numbers.slice(3);
+    }
   }
 
   let numArray = numbers.split(delimeter);
