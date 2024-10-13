@@ -3,14 +3,17 @@ function add(numbers) {
   let delimeter = /[\n,]/;
 
   if (numbers.startsWith("//")) {
-    // Get the matching expression within the square bracket
-    // /\[(.*)\]/ is the regular expression for matching the condition
-    // This means anything inside the square bracket that are grouped together, contains the delimeter.
-    // It will return an array.
-    const matchingExp = numbers.match(/\[(.*)\]/);
+    const matchingExp = numbers.match(/\[(.*?)\]/g);
 
     if (matchingExp) {
-      delimeter = matchingExp[1]; // this will return an array which contains the delimeter at its 2nd index
+      let extractedDelimiters = matchingExp.map((exp) => exp.slice(1, -1));
+
+      extractedDelimiters = extractedDelimiters.map((delim) =>
+        delim.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
+      ); // getting the delimiter to extract the special characters for converting it to regular expression
+
+      delimeter = new RegExp(extractedDelimiters.join("|"), "g");
+
       const tempNum = numbers.split("\n"); // split the string between new line
       numbers = tempNum[1]; // 2nd index contains the actual number with delimiter
     } else {
@@ -18,7 +21,6 @@ function add(numbers) {
       numbers = numbers.slice(3);
     }
   }
-
   let numArray = numbers.split(delimeter);
   numArray = numArray.filter((num) => num < 1000);
 
